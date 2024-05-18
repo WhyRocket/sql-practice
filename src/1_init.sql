@@ -8,7 +8,7 @@ CREATE TABLE library.books
     title VARCHAR(1000) NOT NULL,
     publishing_year DATE NOT NULL,
     isbn CHAR(17) NOT NULL,
-    publisher_id INTEGER NOT NULL,
+    publisher_id INTEGER NOT NULL REFERENCES publisher (id) ON DELETE RESTRICT,
     age_limit SMALLINT NOT NULL,
     books_number SMALLINT NOT NULL
 );
