@@ -39,7 +39,7 @@ CREATE TABLE library.customer
 CREATE TABLE library.lib_customers
 (
     id_customer INTEGER REFERENCES customer (id) ON DELETE RESTRICT,
-    id_book INTEGER REFERENCES books (id) ON DELETE RESTRICT
+    id_book INTEGER REFERENCES books (id) ON DELETE CASCADE,
     PRIMARY KEY (id_customer, id_book)
 );
 
@@ -67,7 +67,7 @@ CREATE TABLE library.author
 CREATE TABLE library.book_author
 (
     id_author INTEGER REFERENCES author (id) ON DELETE RESTRICT,
-    id_book INTEGER REFERENCES books (id) ON DELETE CASCADE
+    id_book INTEGER REFERENCES books (id) ON DELETE CASCADE,
     PRIMARY KEY (id_author, id_book)
 );
 
