@@ -21,7 +21,58 @@ CREATE TABLE library.genres
 
 CREATE TABLE library.book_genres
 (
-    id_genre INTEGER REFERENCES genres (Id) ON DELETE RESTRICT,
-    id_book INTEGER REFERENCES books (Id) ON DELETE CASCADE,
+    id_genre INTEGER REFERENCES genres (id) ON DELETE RESTRICT,
+    id_book INTEGER REFERENCES books (id) ON DELETE CASCADE,
     PRIMARY KEY (id_genre, id_book)
+);
+
+CREATE TABLE library.customer
+(
+    id SERIAL PRIMARY KEY,
+    phone_number VARCHAR(17) NOT NULL,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    patronymic VARCHAR(100),
+    birthday DATE NOT NULL
+);
+
+CREATE TABLE library.lib_customers
+(
+    id_customer INTEGER REFERENCES customer (id) ON DELETE RESTRICT,
+    id_book INTEGER REFERENCES books (id) ON DELETE RESTRICT
+    PRIMARY KEY (id_customer, id_book)
+);
+
+CREATE TABLE library.publisher
+(
+    id SERIAL PRIMARY KEY,
+    "name" VARCHAR(100) NOT NULL,
+    id_country INTEGER NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    street VARCHAR(100) NOT NULL,
+    building_number SMALLINT NOT NULL,
+    e_mail VARCHAR(200),
+    phone_number VARCHAR(17)
+);
+
+CREATE TABLE library.author
+(
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    patronymic VARCHAR(100),
+    id_country INTEGER NOT NULL,
+);
+
+CREATE TABLE library.book_author
+(
+    id_author INTEGER REFERENCES author (id) ON DELETE RESTRICT,
+    id_book INTEGER REFERENCES books (id) ON DELETE CASCADE
+    PRIMARY KEY (id_author, id_book)
+);
+
+CREATE TABLE library.country
+(
+    id SERIAL PRIMARY KEY,
+    "name" VARCHAR(100) NOT NULL
 );
