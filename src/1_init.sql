@@ -36,11 +36,11 @@ CREATE TABLE library.customer
     birthday DATE NOT NULL
 );
 
-CREATE TABLE library.lib_customers
+CREATE TABLE library.customer_books
 (
+    id SERIAL PRIMARY KEY,
     id_customer INTEGER REFERENCES customer (id) ON DELETE RESTRICT,
-    id_book INTEGER REFERENCES books (id) ON DELETE CASCADE,
-    PRIMARY KEY (id_customer, id_book)
+    id_book INTEGER REFERENCES books (id) ON DELETE RESTRICT
 );
 
 CREATE TABLE library.publisher
@@ -50,7 +50,7 @@ CREATE TABLE library.publisher
     id_country INTEGER NOT NULL,
     city VARCHAR(100) NOT NULL,
     street VARCHAR(100) NOT NULL,
-    building_number SMALLINT NOT NULL,
+    building_number VARCHAR(100) NOT NULL,
     e_mail VARCHAR(200),
     phone_number VARCHAR(17)
 );
