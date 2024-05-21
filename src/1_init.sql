@@ -61,7 +61,7 @@ CREATE TABLE library.author
     first_name VARCHAR(100) NOT NULL,
     last_name VARCHAR(100) NOT NULL,
     patronymic VARCHAR(100),
-    id_country INTEGER NOT NULL,
+    id_country INTEGER NOT NULL
 );
 
 CREATE TABLE library.book_author
