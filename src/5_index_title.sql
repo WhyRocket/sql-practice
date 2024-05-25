@@ -1,0 +1,1 @@
+CREATE INDEX idx_title ON library.books (title);
