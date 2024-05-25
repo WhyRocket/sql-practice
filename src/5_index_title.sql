@@ -1,1 +1,1 @@
-CREATE INDEX idx_title ON library.books (title);
+CREATE INDEX title_index ON library.books (title);
