@@ -1,5 +1,3 @@
-CREATE DATABASE sql_practice;
-
 CREATE SCHEMA library;
 
 CREATE TABLE library.books
