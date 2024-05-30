@@ -82,7 +82,6 @@ INSERT INTO library.customers (phone_number, first_name, last_name, patronymic, 
 ('+1-202-555-0167', 'Daniel', 'Thomas', NULL, '1991-06-14'),
 ('+1-202-555-0111', 'Laura', 'Jackson', 'Anne', '1980-10-21');
 
--- Вставка данных в customer_books
 INSERT INTO library.customer_books (id_customer, id_book) VALUES
 (1, 1),
 (1, 2),
@@ -113,4 +112,16 @@ INSERT INTO library.customer_books (id_customer, id_book) VALUES
 (9, 7),
 (10, 8),
 (10, 9),
+(10, 10);
+
+INSERT INTO library.book_author (id_author, id_book) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5),
+(6, 6),
+(7, 7),
+(8, 8),
+(9, 9),
 (10, 10);
