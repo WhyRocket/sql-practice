@@ -1,0 +1,2 @@
+ALTER TABLE library.genres
+ALTER COLUMN "name" TYPE VARCHAR (50);
