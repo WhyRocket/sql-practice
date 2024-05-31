@@ -35,7 +35,7 @@ INSERT INTO library.authors (first_name, last_name, patronymic, id_country) VALU
 ('Jules', 'Verne', NULL, 6);
 
 INSERT INTO library.books (title, publishing_year, isbn, publisher_id, age_limit, books_number) VALUES
-('Harry Potter and the Philosopher\''s Stone', '1997-06-26', '978-0-7475-3269-9', 1, 12, 500),
+('Harry Potter and the Philosopher''s Stone', '1997-06-26', '978-0-7475-3269-9', 1, 12, 500),
 ('War and Peace', '1869-01-01', '978-0-19-923276-5', 2, 16, 300),
 ('1984', '1949-06-08', '978-0-452-28423-4', 3, 16, 400),
 ('The Adventures of Tom Sawyer', '1876-01-01', '978-0-14-132110-3', 4, 12, 200),
