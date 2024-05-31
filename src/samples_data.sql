@@ -1,6 +1,6 @@
--- Скрипты с описанием задания для выборки данных из базы данных --
+-- Скрипты с описанием задания для выборки данных из базы данных
 
--- Получение списка книг, опубликованных определенным издательством (например, "Издательство 1") --
+-- Получение списка книг, опубликованных определенным издательством (например, "Издательство 1")
 SELECT 
     b.title, 
     b.publishing_year,
@@ -14,7 +14,7 @@ JOIN book_author ba ON ba.id_book = b.id
 JOIN authors a ON a.id = ba.id_author
 WHERE p.name LIKE '%Penguin Random House%';
 
--- Получение списка книг, выпущенных после определенного года (например, 2010) --
+-- Получение списка книг, выпущенных после определенного года (например, 2010)
 SELECT 
     b.title, 
     b.publishing_year,
@@ -26,7 +26,7 @@ JOIN book_author ba ON ba.id_book = b.id
 JOIN authors a ON a.id = ba.id_author
 WHERE b.publishing_year > '1900-01-01';
 
--- Получение списка книг, написанных определенным автором (например, "Имя Фамилия") --
+-- Получение списка книг, написанных определенным автором (например, "Имя Фамилия")
 SELECT 
     b.title, 
     b.publishing_year,
@@ -38,7 +38,7 @@ JOIN book_author ba ON ba.id_book = b.id
 JOIN authors a ON a.id = ba.id_author
 WHERE a.first_name LIKE '%Fyodor%' AND a.last_name LIKE '%Dostoevsky%' AND a.patronymic LIKE '%Mikhailovich%';
 
--- Получение списка книг, которые взял определенный клиент (например, с номером телефона "+7 960 567 87 12") --
+-- Получение списка книг, которые взял определенный клиент (например, с номером телефона "+7 960 567 87 12")
 SELECT 
     b.title, 
     b.publishing_year,
@@ -55,7 +55,7 @@ JOIN book_author ba ON ba.id_book = b.id
 JOIN authors a ON a.id = ba.id_author
 WHERE c.phone_number LIKE '%+1-202-555-0189%';
 
--- Получение списка книг определенного жанра (например, "Фантастика") --
+-- Получение списка книг определенного жанра (например, "Фантастика")
 SELECT 
     b.title, 
     b.publishing_year,
@@ -69,7 +69,7 @@ JOIN book_author ba ON ba.id_book = b.id
 JOIN authors a ON a.id = ba.id_author
 WHERE g.name LIKE '%Science Fiction%';
 
--- Получение списка книг с информацией об авторах и издателях --
+-- Получение списка книг с информацией об авторах и издателях
 SELECT 
     b.title, 
     b.publishing_year,
@@ -91,7 +91,7 @@ JOIN publishers p ON p.id = b.publisher_id
 JOIN countries pc ON pc.id = p.id_country
 JOIN countries ac ON ac.id = a.id_country;
 
--- Получение списка книг с количеством раз, сколько каждая из них была взята клиентами --
+-- Получение списка книг с количеством раз, сколько каждая из них была взята клиентами
 SELECT 
     b.title, 
     b.publishing_year, 
